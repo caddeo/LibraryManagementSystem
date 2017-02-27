@@ -1,4 +1,6 @@
-﻿@model List<LibraryManagementSystemDemo.Models.BookView>
+﻿@using System.Web.UI.HtmlControls
+@using LibraryManagementSystemDemo.Models
+@model List<LibraryManagementSystemDemo.Models.BookView>
 
 @{
     Layout = null;
@@ -15,11 +17,17 @@
 <body>
 <main>
     <section>
-        @if (ViewBag.Status != null)
-        {
-            <p>@ViewBag.Status</p>
-        }
-        <div id="search-field"></div>
+        <div id="search-field">
+            
+            <div>
+                @Html.TextBox("serchQuery")
+            </div>
+
+            <div>
+                <button type="submit">Search</button>
+            </div>
+        </div>
+
         @foreach (var book in Model)
         {
             <div class="book-item">
@@ -65,11 +73,11 @@
                     </table>
                     @if (@book.IsLendOut)
                     {
-                        @Html.ActionLink("Reserve", "Reserve", new {id = book.Id}, new {@class = "button-Reserve"})
+                        @Html.ActionLink("Reserve", "Reserve", new { id = book.Id }, new { @class = "button-Reserve" })
                     }
                     else
                     {
-                        @Html.ActionLink("Book", "LoanOut", new {id = book.Id}, new {@class = "button-Book"})
+                        @Html.ActionLink("Book", "LoanOut", new { id = book.Id }, new { @class = "button-Book" })
                     }
                 </div>
             </div>

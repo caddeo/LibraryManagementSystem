@@ -19,7 +19,35 @@ main section {
     border: 1px solid black;
     margin: 5px 0;
     background-color: white;
+    padding: 2.5%;
+    height: 100%;
 }
+
+#search-field > div:nth-child(1) {
+    display: inline-block;
+    width: 79%;
+}
+
+#serchQuery {  
+    width: 100%;
+    height: 100%;
+}
+
+#search-field > div:nth-child(2) {
+    display: inline-block;
+    width: 20%;
+}
+
+#search-field > div:nth-child(2) {
+    display: inline-block;
+    width: 20%;
+}
+
+#search-field > div > button {
+    width: 100%;
+}
+
+
 
 .book-item {
     background-color: aliceblue;

@@ -18,6 +18,8 @@ namespace LibraryManagementSystemDemo.Models
         public string PictureUrl { get; set; }
         public bool IsLendOut { get; set; }
 
+        public string query { get; set; }
+
         public BookView(LibraryService.Book book)
         {
             this.Id = book.Id;
@@ -31,5 +33,7 @@ namespace LibraryManagementSystemDemo.Models
             this.PictureUrl = book.PictureUrl;
             this.IsLendOut = book.IsLendOut;
         }
+
+        public BookView() { }
     }
 }

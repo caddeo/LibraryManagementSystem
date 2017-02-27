@@ -22,13 +22,22 @@ namespace LibraryManagementSystemDemo.Controllers
 
         // GET: BookView
         [HttpGet]
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(params string[] queries)
         {
             var model = await _service.GetAllBooksAsync();
             var books = model
                 .Select(book => new BookView(book))
                 .ToList();
             return View(books);
+        }
+
+        public ActionResult Search(BookView view)
+        {
+            var query = view.query;
+
+            var splitQuery = query.Split(' ');
+
+            return RedirectToAction("Index", new { queries = splitQuery });
         }
 
         [HttpGet]

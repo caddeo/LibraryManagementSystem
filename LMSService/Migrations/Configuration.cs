@@ -63,7 +63,7 @@ namespace LMSService.Migrations
                     originaltitle: "Oversat fra engelsk",
                     isbn: "978-87-406-1227-1",
                     genre: "978-87-93233-17-1",
-                    pictureUrl: baseUrl + "2084.jpg"),
+                    pictureUrl: baseUrl + "De-blindes-land.jpg"),
             };
 
             if (!msContext.Books.Any())
