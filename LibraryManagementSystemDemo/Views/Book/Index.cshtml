@@ -1,0 +1,62 @@
+﻿@model List<LibraryManagementSystemDemo.Models.BookView>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+</head>
+<body>
+<main>
+    <section>
+        @foreach (var book in Model)
+        {
+            <h2>@book.Name</h2>
+            <h3>@book.Author</h3>
+            <table>
+                <tr>
+                    <th>Title</th>
+                    <td>@book.Name</td>
+                </tr>
+
+                <tr>
+                    <th>Author</th>
+                    <td>@book.Author</td>
+                </tr>
+
+                <tr>
+                    <th>Publisher</th>
+                    <td>@book.Publisher</td>
+                </tr>
+
+                <tr>
+                    <th>Size</th>
+                    <td>@book.Pages (pages)</td>
+                </tr>
+
+                <tr>
+                    <th>Original title</th>
+                    <td>@book.OriginalTitle</td>
+                </tr>
+
+                <tr>
+                    <th>ISBN</th>
+                    <td>@book.ISBN</td>
+                </tr>
+
+                <tr>
+                    <th>Genre</th>
+                    <td>@book.Genre</td>
+                </tr>
+            </table>
+
+        }
+    </section>
+</main>
+</body>
+</html>
