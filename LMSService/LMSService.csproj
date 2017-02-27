@@ -72,6 +72,10 @@
     <Compile Include="Migrations\201702270521042_DbUpdateFix.Designer.cs">
       <DependentUpon>201702270521042_DbUpdateFix.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702270726172_updateDB2.cs" />
+    <Compile Include="Migrations\201702270726172_updateDB2.Designer.cs">
+      <DependentUpon>201702270726172_updateDB2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\IBook.cs" />
@@ -97,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702270521042_DbUpdateFix.resx">
       <DependentUpon>201702270521042_DbUpdateFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702270726172_updateDB2.resx">
+      <DependentUpon>201702270726172_updateDB2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

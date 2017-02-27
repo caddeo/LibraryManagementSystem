@@ -18,7 +18,8 @@ namespace LMSService.Migrations
 
         protected override void Seed(LibraryContext context)
         {
-
+            //(localdb)\mssqllocaldb	
+            // SQLLocalDB.exe
             // Create books
             var baseUrl =
                 @"~/Images/";
@@ -52,6 +53,16 @@ namespace LMSService.Migrations
                     originaltitle: "2084 (fransk)",
                     isbn: "978-87-406-1227-1",
                     genre: "Skønlitteratur",
+                    pictureUrl: baseUrl + "2084.jpg"),
+
+                new Book(
+                    name: "De blindes land",
+                    author: "H. G. Wells",
+                    publisher: "Science Fiction Cirklen",
+                    pages: 254,
+                    originaltitle: "Oversat fra engelsk",
+                    isbn: "978-87-406-1227-1",
+                    genre: "978-87-93233-17-1",
                     pictureUrl: baseUrl + "2084.jpg"),
             };
 
