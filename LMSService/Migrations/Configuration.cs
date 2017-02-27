@@ -18,8 +18,10 @@ namespace LMSService.Migrations
 
         protected override void Seed(LibraryContext context)
         {
+
+            // Create books
             var baseUrl =
-                "C:\\Users\\poss_\\Documents\\visual studio 2015\\Projects\\LibraryManagementSystemDemo\\LibraryMSService\\Images\\";
+                @"~/Images/";
             var books = new List<Book>()
             {
                 new Book(
@@ -30,7 +32,7 @@ namespace LMSService.Migrations
                     originaltitle: "Originaludgave: 2017",
                     isbn: "978-87-02-21953-1",
                     genre: "Skønlitteratur",
-                    pictureURL: baseUrl + "feberfrihed.jpg"),
+                    pictureUrl: baseUrl + "feberfrihed.jpg"),
 
                 new Book(
                     name: "Det der er imellem os",
@@ -40,7 +42,7 @@ namespace LMSService.Migrations
                     originaltitle: "What lies between us",
                     isbn: "978-87-638-4610-3",
                     genre: "Skønlitteratur",
-                    pictureURL: baseUrl + "Det-der-er-imellem-os.jpg"),
+                    pictureUrl: baseUrl + "Det-der-er-imellem-os.jpg"),
 
                 new Book(
                     name: "2084 : verdens ende",
@@ -50,28 +52,57 @@ namespace LMSService.Migrations
                     originaltitle: "2084 (fransk)",
                     isbn: "978-87-406-1227-1",
                     genre: "Skønlitteratur",
-                    pictureURL: baseUrl + "2084.jpg"),
+                    pictureUrl: baseUrl + "2084.jpg"),
             };
 
-            foreach (var book in books)
+            if (!context.Books.Any())
             {
-                if (!context.Books.Any(x => x.Id == book.Id))
+                // Save them if they do not exist
+                foreach (var book in books)
                 {
                     context.Books.Add(book);
                 }
+
+                context.SaveChanges();
             }
 
-            context.SaveChanges();
+            // Create a renter
+            var renter = new Renter("John", "Doe");
 
-            var reservation = new Reservation(books[0], "Jon Doe");
+            if (!context.Renters.Any())
+            {
+                context.Renters.Add(renter);
+                context.SaveChanges();
+            }
 
-            if (!context.Reservations.Any(x => x.Id == reservation.Id))
+            // Make it loan a book
+            var loan = new Loan(books[0], renter, DateTime.Now.AddDays(-10).AddMonths(-2), DateTime.Now.AddMonths(10));
+
+
+            if (!context.Loans.Any())
+            {
+                context.Loans.Add(loan);
+                books[0].SetLoanStatus(true);
+                context.SaveChanges();
+            }
+
+            // Create a reserver
+            var reserver = new Renter("Jane", "Doe");
+
+            if (context.Renters.Count() == 1) 
+            {
+                context.Renters.Add(reserver);
+                context.SaveChanges();
+            }
+
+            // Make it reserve a book that is loaned
+            var reservation = new Reservation(books[0], reserver);
+
+            if (!context.Reservations.Any())
             {
                 context.Reservations.Add(reservation);
                 context.SaveChanges();
             }
-
-
         }
     }
 }

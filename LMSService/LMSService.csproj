@@ -55,15 +55,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\LibraryContext.cs" />
+    <Compile Include="Handlers\Commands\BookToRenterCommandHandler.cs" />
+    <Compile Include="Handlers\Commands\CreateRenterCommandHandler.cs" />
+    <Compile Include="Handlers\Commands\ReserveToRenterCommandHandler.cs" />
     <Compile Include="Handlers\Queries\GetAllBooksQueryHandler.cs" />
     <Compile Include="ILibraryService.cs" />
     <Compile Include="Migrations\201702270137312__Initial.cs" />
     <Compile Include="Migrations\201702270137312__Initial.Designer.cs">
       <DependentUpon>201702270137312__Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702270506059_UpdateDB.cs" />
+    <Compile Include="Migrations\201702270506059_UpdateDB.Designer.cs">
+      <DependentUpon>201702270506059_UpdateDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702270521042_DbUpdateFix.cs" />
+    <Compile Include="Migrations\201702270521042_DbUpdateFix.Designer.cs">
+      <DependentUpon>201702270521042_DbUpdateFix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\IBook.cs" />
+    <Compile Include="Models\Loan.cs" />
+    <Compile Include="Models\Renter.cs" />
     <Compile Include="Models\Reservation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LibraryService.cs" />
@@ -73,12 +86,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Handlers\Commands\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201702270137312__Initial.resx">
       <DependentUpon>201702270137312__Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702270506059_UpdateDB.resx">
+      <DependentUpon>201702270506059_UpdateDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702270521042_DbUpdateFix.resx">
+      <DependentUpon>201702270521042_DbUpdateFix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

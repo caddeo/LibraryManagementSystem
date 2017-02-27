@@ -9,52 +9,70 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="~/Styles/allbooksstyle.css" rel="stylesheet" />
     <title>View</title>
 </head>
 <body>
 <main>
     <section>
+        @if (ViewBag.Status != null)
+        {
+            <p>@ViewBag.Status</p>
+        }
+        <div id="search-field"></div>
         @foreach (var book in Model)
         {
-            <h2>@book.Name</h2>
-            <h3>@book.Author</h3>
-            <table>
-                <tr>
-                    <th>Title</th>
-                    <td>@book.Name</td>
-                </tr>
+            <div class="book-item">
+                <img src="@Url.Content(book.PictureUrl)" alt="Picture of the book @book.Name">
+                <div class="book-item-main">
+                    <h2>@book.Name</h2>
+                    <h3>@book.Author</h3>
 
-                <tr>
-                    <th>Author</th>
-                    <td>@book.Author</td>
-                </tr>
+                    <table>
+                        <tr>
+                            <th>Title</th>
+                            <td>@book.Name</td>
+                        </tr>
 
-                <tr>
-                    <th>Publisher</th>
-                    <td>@book.Publisher</td>
-                </tr>
+                        <tr>
+                            <th>Author</th>
+                            <td>@book.Author</td>
+                        </tr>
 
-                <tr>
-                    <th>Size</th>
-                    <td>@book.Pages (pages)</td>
-                </tr>
+                        <tr>
+                            <th>Publisher</th>
+                            <td>@book.Publisher</td>
+                        </tr>
 
-                <tr>
-                    <th>Original title</th>
-                    <td>@book.OriginalTitle</td>
-                </tr>
+                        <tr>
+                            <th>Size</th>
+                            <td>@book.Pages (pages)</td>
+                        </tr>
 
-                <tr>
-                    <th>ISBN</th>
-                    <td>@book.ISBN</td>
-                </tr>
+                        <tr>
+                            <th>Original title</th>
+                            <td>@book.OriginalTitle</td>
+                        </tr>
 
-                <tr>
-                    <th>Genre</th>
-                    <td>@book.Genre</td>
-                </tr>
-            </table>
-
+                        <tr>
+                            <th>ISBN</th>
+                            <td>@book.ISBN</td>
+                        </tr>
+                        <tr>
+                            <th>Genre</th>
+                            <td>@book.Genre</td>
+                        </tr>
+                    </table>
+                    @if (@book.IsLendOut)
+                    {
+                        @Html.ActionLink("Reserve", "Reserve", new {id = book.Id}, new {@class = "button-Reserve"})
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Book", "LoanOut", new {id = book.Id}, new {@class = "button-Book"})
+                    }
+                </div>
+            </div>
         }
     </section>
 </main>

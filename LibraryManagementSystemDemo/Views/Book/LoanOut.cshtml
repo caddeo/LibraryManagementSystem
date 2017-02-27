@@ -1,0 +1,42 @@
+﻿@model LibraryManagementSystemDemo.Models.BookingView
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Borrow book</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("SendLoanOut", "Book", FormMethod.Post, new { booking = Model }))
+        {
+            @Html.HiddenFor(model => model.BookId);
+            <table>
+                <tr>
+                    <th>@Html.LabelFor(model => model.FirstName)</th>
+                    <td>@Html.TextBoxFor(model => model.FirstName)</td>
+                    <td>@Html.ValidationMessageFor(model => model.FirstName)</td>
+                </tr>
+                <tr>
+                    <th>@Html.LabelFor(model => model.LastName)</th>
+                    <td>@Html.TextBoxFor(model => model.LastName)</td>
+                    <td>@Html.ValidationMessageFor(model => model.LastName)</td>
+                </tr>
+                <tr>
+                    <th>@Html.LabelFor(model => model.LoanUntil)</th>
+                    <td>@Html.TextBoxFor(model => model.LoanUntil)</td>
+                    <td>@Html.ValidationMessageFor(model => model.LoanUntil)</td>
+                </tr>
+
+            </table>
+
+            <input type="submit" value="Borrow">
+        }
+    </div>
+</body>
+</html>

@@ -11,14 +11,17 @@ namespace LMSService.Handlers.Queries
     {
         private LibraryContext _database;
 
-        public GetAllBooksQueryHandler()
+        public GetAllBooksQueryHandler(LibraryContext db)
         {
-            _database = new LibraryContext();
+            _database = db;
         }
 
         public async Task<List<Book>> GetAllBooks()
         {
-            return await _database.Books.ToListAsync();
+            using (var db = _database)
+            {
+                return await db.Books.ToListAsync();
+            }
         }
     }
 }

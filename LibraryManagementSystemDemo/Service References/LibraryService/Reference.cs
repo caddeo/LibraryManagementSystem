@@ -9,208 +9,35 @@
 //------------------------------------------------------------------------------
 
 namespace LibraryManagementSystemDemo.LibraryService {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Book", Namespace="http://schemas.datacontract.org/2004/07/LMSService.Models")]
-    [System.SerializableAttribute()]
-    public partial class Book : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AuthorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string GenreField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ISBNField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool IsReservedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OriginalTitleField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PagesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PictureURLField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PublisherField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Author {
-            get {
-                return this.AuthorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AuthorField, value) != true)) {
-                    this.AuthorField = value;
-                    this.RaisePropertyChanged("Author");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Genre {
-            get {
-                return this.GenreField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.GenreField, value) != true)) {
-                    this.GenreField = value;
-                    this.RaisePropertyChanged("Genre");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ISBN {
-            get {
-                return this.ISBNField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ISBNField, value) != true)) {
-                    this.ISBNField = value;
-                    this.RaisePropertyChanged("ISBN");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsReserved {
-            get {
-                return this.IsReservedField;
-            }
-            set {
-                if ((this.IsReservedField.Equals(value) != true)) {
-                    this.IsReservedField = value;
-                    this.RaisePropertyChanged("IsReserved");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OriginalTitle {
-            get {
-                return this.OriginalTitleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalTitleField, value) != true)) {
-                    this.OriginalTitleField = value;
-                    this.RaisePropertyChanged("OriginalTitle");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Pages {
-            get {
-                return this.PagesField;
-            }
-            set {
-                if ((this.PagesField.Equals(value) != true)) {
-                    this.PagesField = value;
-                    this.RaisePropertyChanged("Pages");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PictureURL {
-            get {
-                return this.PictureURLField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PictureURLField, value) != true)) {
-                    this.PictureURLField = value;
-                    this.RaisePropertyChanged("PictureURL");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Publisher {
-            get {
-                return this.PublisherField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PublisherField, value) != true)) {
-                    this.PublisherField = value;
-                    this.RaisePropertyChanged("Publisher");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="LibraryService.ILibraryService")]
     public interface ILibraryService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/GetAllBooks", ReplyAction="http://tempuri.org/ILibraryService/GetAllBooksResponse")]
-        LibraryManagementSystemDemo.LibraryService.Book[] GetAllBooks();
+        LMSService.Models.Book[] GetAllBooks();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/GetAllBooks", ReplyAction="http://tempuri.org/ILibraryService/GetAllBooksResponse")]
-        System.Threading.Tasks.Task<LibraryManagementSystemDemo.LibraryService.Book[]> GetAllBooksAsync();
+        System.Threading.Tasks.Task<LMSService.Models.Book[]> GetAllBooksAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/BorrowBook", ReplyAction="http://tempuri.org/ILibraryService/BorrowBookResponse")]
+        void BorrowBook(System.Guid bookId, System.Guid renterId, System.DateTime from, System.DateTime to);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/BorrowBook", ReplyAction="http://tempuri.org/ILibraryService/BorrowBookResponse")]
+        System.Threading.Tasks.Task BorrowBookAsync(System.Guid bookId, System.Guid renterId, System.DateTime from, System.DateTime to);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/ReserveBook", ReplyAction="http://tempuri.org/ILibraryService/ReserveBookResponse")]
+        void ReserveBook(System.Guid renterId, System.Guid bookId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/ReserveBook", ReplyAction="http://tempuri.org/ILibraryService/ReserveBookResponse")]
+        System.Threading.Tasks.Task ReserveBookAsync(System.Guid renterId, System.Guid bookId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/CreateRenter", ReplyAction="http://tempuri.org/ILibraryService/CreateRenterResponse")]
+        System.Guid CreateRenter(string firstname, string lastname);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/CreateRenter", ReplyAction="http://tempuri.org/ILibraryService/CreateRenterResponse")]
+        System.Threading.Tasks.Task<System.Guid> CreateRenterAsync(string firstname, string lastname);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -240,12 +67,36 @@ namespace LibraryManagementSystemDemo.LibraryService {
                 base(binding, remoteAddress) {
         }
         
-        public LibraryManagementSystemDemo.LibraryService.Book[] GetAllBooks() {
+        public LMSService.Models.Book[] GetAllBooks() {
             return base.Channel.GetAllBooks();
         }
         
-        public System.Threading.Tasks.Task<LibraryManagementSystemDemo.LibraryService.Book[]> GetAllBooksAsync() {
+        public System.Threading.Tasks.Task<LMSService.Models.Book[]> GetAllBooksAsync() {
             return base.Channel.GetAllBooksAsync();
+        }
+        
+        public void BorrowBook(System.Guid bookId, System.Guid renterId, System.DateTime from, System.DateTime to) {
+            base.Channel.BorrowBook(bookId, renterId, from, to);
+        }
+        
+        public System.Threading.Tasks.Task BorrowBookAsync(System.Guid bookId, System.Guid renterId, System.DateTime from, System.DateTime to) {
+            return base.Channel.BorrowBookAsync(bookId, renterId, from, to);
+        }
+        
+        public void ReserveBook(System.Guid renterId, System.Guid bookId) {
+            base.Channel.ReserveBook(renterId, bookId);
+        }
+        
+        public System.Threading.Tasks.Task ReserveBookAsync(System.Guid renterId, System.Guid bookId) {
+            return base.Channel.ReserveBookAsync(renterId, bookId);
+        }
+        
+        public System.Guid CreateRenter(string firstname, string lastname) {
+            return base.Channel.CreateRenter(firstname, lastname);
+        }
+        
+        public System.Threading.Tasks.Task<System.Guid> CreateRenterAsync(string firstname, string lastname) {
+            return base.Channel.CreateRenterAsync(firstname, lastname);
         }
     }
 }

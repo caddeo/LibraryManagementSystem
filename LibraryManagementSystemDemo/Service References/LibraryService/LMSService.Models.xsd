@@ -13,11 +13,11 @@
       <xs:element minOccurs="0" name="Genre" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ISBN" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="ser:guid" />
-      <xs:element minOccurs="0" name="IsReserved" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsLendOut" type="xs:boolean" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OriginalTitle" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Pages" type="xs:int" />
-      <xs:element minOccurs="0" name="PictureURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PictureUrl" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Publisher" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>

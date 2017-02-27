@@ -23,9 +23,10 @@ namespace LMSService.Models
         [DataMember]
         public string Genre { get; protected set; } // .
         [DataMember]
-        public string PictureURL { get; set; }
+        public string PictureUrl { get; set; }
+
         [DataMember]
-        public bool IsReserved { get; protected set; }
+        public bool IsLendOut { get; protected set; }
 
         public Book(string name, string author, string publisher, int pages, string originaltitle, string isbn, string genre)
         {
@@ -39,25 +40,25 @@ namespace LMSService.Models
             this.ISBN = isbn;
             this.Genre = genre;
 
-            this.IsReserved = false;
+            this.IsLendOut = false;
         }
 
         // Overload
         public Book(string name, string author, string publisher, int pages, string originaltitle, string isbn,
-            string genre, string pictureURL) : this(name, author, publisher, pages, originaltitle, isbn, genre)
+            string genre, string pictureUrl) : this(name, author, publisher, pages, originaltitle, isbn, genre)
         {
-            SetPictureURL(pictureURL);
+            SetPictureURL(pictureUrl);
         }
         public Book() : this(string.Empty, string.Empty, string.Empty, 0, string.Empty, string.Empty, string.Empty) {}
 
         public void SetPictureURL(string absolutePath)
         {
-            this.PictureURL = absolutePath;
+            this.PictureUrl = absolutePath;
         }
 
-        public void SetReservedStatus(bool status)
+        public void SetLoanStatus(bool status)
         {
-            this.IsReserved = status;
+            this.IsLendOut = status;
         }
     } 
 }

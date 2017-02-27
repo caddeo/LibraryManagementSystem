@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1b56bac7-efbd-42a1-8c27-cc24a92f355e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3a867540-77d9-4d25-a551-c2ce83233b21" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,10 +22,10 @@
     <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/LMSService/LibraryService/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="721061a2-a955-422d-925c-f146fc2b38ab" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LMSService/LibraryService/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="e40c1bb4-3e4f-4f2b-93a7-46fafe93786a" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LMSService/LibraryService/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="9027683e-e9ff-48fe-9798-c19669de8b9f" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LMSService/LibraryService/mex" />
-    <MetadataFile FileName="LMSService.Models.xsd" MetadataType="Schema" ID="c1052f08-95fe-4b3f-9e20-93f34b6e6e85" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LMSService/LibraryService/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="45931011-41ec-44f6-87d1-a448b14fb569" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LMSService/LibraryService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="302f7fd8-261e-48a0-b6d7-1b459247de83" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LMSService/LibraryService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="e9ffc555-c1ae-4844-8252-11addeea7d8b" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LMSService/LibraryService/mex" />
+    <MetadataFile FileName="LMSService.Models.xsd" MetadataType="Schema" ID="f4253231-db72-42c0-8823-58facde2b664" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LMSService/LibraryService/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

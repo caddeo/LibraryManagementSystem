@@ -1,0 +1,94 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(100,150,100, 0.4);
+}
+
+main section {
+    
+    margin: 0 auto;
+    width: 500px;
+}
+
+#search-field {
+    height: 65px;
+    border: 1px solid black;
+    margin: 5px 0;
+    background-color: white;
+}
+
+.book-item {
+    background-color: aliceblue;
+    width: 100%;
+    display: inline-block;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-bottom: 2px;
+}
+
+.book-item img, .book-item-main {
+    height: 100%;
+}
+
+.book-item img {
+    padding-top: 5%;
+    padding-left: 1%;
+    display: inline-block;
+}
+
+.book-item-main {
+    float: right;
+    margin-right: 3%;
+}
+
+.book-item-main h2, .book-item-main h3 {
+    margin: 0;
+}
+
+.book-item-main h3 {
+    font-style: italic;
+    font-weight: 0;
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.book-item-main th {
+    text-align: left;
+}
+
+.book-item > div > a {
+    width: 150px;
+    margin: 10px 5px;
+    padding: 5px 30px;
+
+    text-align:center;
+    
+    float: right;
+}
+.book-item > div > .button-Reserve:link {
+    background: rgb(250,30,40); 
+}
+
+.book-item > div > .button-Book:link {
+    background: rgb(64,150,238); 
+}
+
+
+.book-item > div > a:link {
+    color: white;
+    text-decoration: none;
+}
+
+.book-item > div > a:visited {
+    color: white;
+}
+
+.book-item > div > a:hover {
+    background: rgba(100,150,238, 0.3); 
+}
+
+

@@ -13,7 +13,18 @@ namespace LMSService
     [ServiceContract]
     public interface ILibraryService
     {
+        // Queries
         [OperationContract]
         Task<List<Book>> GetAllBooks();
+
+        // Commands 
+        [OperationContract]
+        Task BorrowBook(Guid bookId, Guid renterId, DateTime from, DateTime to);
+
+        [OperationContract]
+        Task ReserveBook(Guid renterId, Guid bookId);
+
+        [OperationContract]
+        Task<Guid> CreateRenter(string firstname, string lastname);
     }
 }

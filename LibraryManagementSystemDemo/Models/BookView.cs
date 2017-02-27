@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using LMSService.Models;
 
 namespace LibraryManagementSystemDemo.Models
 {
@@ -15,10 +16,10 @@ namespace LibraryManagementSystemDemo.Models
         public string OriginalTitle { get; set; }
         public string ISBN { get; set; }
         public string Genre { get; set; } 
-        public string PictureURL { get; set; }
-        public bool IsReserved { get; set; }
+        public string PictureUrl { get; set; }
+        public bool IsLendOut { get; set; }
 
-        public BookView(LibraryService.Book book)
+        public BookView(Book book)
         {
             this.Id = book.Id;
             this.Name = book.Name;
@@ -28,8 +29,8 @@ namespace LibraryManagementSystemDemo.Models
             this.OriginalTitle = book.OriginalTitle;
             this.ISBN = book.ISBN;
             this.Genre = book.Genre;
-            this.PictureURL = book.PictureURL;
-            this.IsReserved = book.IsReserved;
+            this.PictureUrl = book.PictureUrl;
+            this.IsLendOut = book.IsLendOut;
         }
     }
 }
