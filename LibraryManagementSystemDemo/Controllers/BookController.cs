@@ -31,15 +31,6 @@ namespace LibraryManagementSystemDemo.Controllers
             return View(books);
         }
 
-        public ActionResult Search(BookView view)
-        {
-            var query = view.query;
-
-            var splitQuery = query.Split(' ');
-
-            return RedirectToAction("Index", new { queries = splitQuery });
-        }
-
         [HttpGet]
         public ActionResult Reserve(string id)
         {
