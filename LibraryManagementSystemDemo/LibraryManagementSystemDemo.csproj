@@ -95,6 +95,9 @@
     <Content Include="Properties\DataSources\LMSService.Models.Book.datasource" />
     <None Include="Service References\LibraryService\configuration91.svcinfo" />
     <None Include="Service References\LibraryService\configuration.svcinfo" />
+    <Content Include="Service References\LibraryService\LibraryManagementSystemDemo.LibraryService.Book.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\LibraryService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

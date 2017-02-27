@@ -9,9 +9,9 @@ namespace LMSService.Handlers.Queries
 {
     public class GetAllBooksQueryHandler
     {
-        private LibraryContext _database;
+        private LibraryMSContext _database;
 
-        public GetAllBooksQueryHandler(LibraryContext db)
+        public GetAllBooksQueryHandler(LibraryMSContext db)
         {
             _database = db;
         }

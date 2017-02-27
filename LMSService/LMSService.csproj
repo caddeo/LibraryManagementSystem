@@ -54,7 +54,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database\LibraryContext.cs" />
+    <Compile Include="Database\LibraryMSContext.cs" />
     <Compile Include="Handlers\Commands\BookToRenterCommandHandler.cs" />
     <Compile Include="Handlers\Commands\CreateRenterCommandHandler.cs" />
     <Compile Include="Handlers\Commands\ReserveToRenterCommandHandler.cs" />

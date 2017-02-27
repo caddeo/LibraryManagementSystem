@@ -23,6 +23,8 @@ namespace LibraryManagementSystemDemo.Models
 
         [Required]
         [Display(Name = "Loan until")]
+        [Range(typeof(DateTime), "1/2/2004", "1/2/2020",
+            ErrorMessage = "Value for {0} must be between {1} and {2}")]
         public DateTime LoanUntil { get; set; }
 
         public BookingView(Loan loan)

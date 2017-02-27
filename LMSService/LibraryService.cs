@@ -15,11 +15,11 @@ namespace LMSService
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "LibraryService" in both code and config file together.
     public class LibraryService : ILibraryService
     {
-        private LibraryContext _database;
+        private LibraryMSContext _database;
 
         public LibraryService()
         {
-            _database = new LibraryContext();
+            _database = new LibraryMSContext();
         }
 
         public async Task<List<Book>> GetAllBooks()

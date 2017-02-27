@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using LMSService.Models;
 
 namespace LibraryManagementSystemDemo.Models
 {
@@ -19,7 +18,7 @@ namespace LibraryManagementSystemDemo.Models
         public string PictureUrl { get; set; }
         public bool IsLendOut { get; set; }
 
-        public BookView(Book book)
+        public BookView(LibraryService.Book book)
         {
             this.Id = book.Id;
             this.Name = book.Name;

@@ -10,9 +10,9 @@ namespace LMSService.Handlers.Commands
 {
     public class CreateRenterCommandHandler
     {
-        public LibraryContext _database;
+        public LibraryMSContext _database;
 
-        public CreateRenterCommandHandler(LibraryContext db)
+        public CreateRenterCommandHandler(LibraryMSContext db)
         {
             _database = db;
         }

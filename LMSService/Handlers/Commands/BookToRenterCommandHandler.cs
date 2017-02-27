@@ -11,14 +11,14 @@ namespace LMSService.Handlers.Commands
 {
     public class BookToRenterCommandHandler
     {
-        private LibraryContext _database;
-        public BookToRenterCommandHandler(LibraryContext db)
+        private LibraryMSContext _database;
+        public BookToRenterCommandHandler(LibraryMSContext db)
         {
             _database = db;
         }
 
         // Book book, Renter renter, DateTime from, DateTime to
-        public void Handle(Guid bookId, Guid renterId, DateTime from, DateTime to)
+        public async void Handle(Guid bookId, Guid renterId, DateTime from, DateTime to)
         {
             // Extra security
             var book = _database.Books.FirstOrDefault(x => x.Id == bookId);
@@ -35,7 +35,7 @@ namespace LMSService.Handlers.Commands
 
             book.SetLoanStatus(true);
             _database.Books.AddOrUpdate(book);
-            _database.SaveChangesAsync();
+            await _database.SaveChangesAsync();
         }
     }
 }

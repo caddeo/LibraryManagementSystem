@@ -10,9 +10,9 @@ namespace LMSService.Handlers.Commands
 {
     public class ReserveToRenterCommandHandler
     {
-        private LibraryContext _database;
+        private LibraryMSContext _database;
 
-        public ReserveToRenterCommandHandler(LibraryContext db)
+        public ReserveToRenterCommandHandler(LibraryMSContext db)
         {
             _database = db;
         }

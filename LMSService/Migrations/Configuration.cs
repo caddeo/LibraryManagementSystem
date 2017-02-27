@@ -9,17 +9,17 @@ namespace LMSService.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<LibraryContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<LibraryMSContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(LibraryContext context)
+        protected override void Seed(LibraryMSContext msContext)
         {
             //(localdb)\mssqllocaldb	
-            // SQLLocalDB.exe
+            // sqllocaldb 
             // Create books
             var baseUrl =
                 @"~/Images/";
@@ -66,53 +66,53 @@ namespace LMSService.Migrations
                     pictureUrl: baseUrl + "2084.jpg"),
             };
 
-            if (!context.Books.Any())
+            if (!msContext.Books.Any())
             {
                 // Save them if they do not exist
                 foreach (var book in books)
                 {
-                    context.Books.Add(book);
+                    msContext.Books.Add(book);
                 }
 
-                context.SaveChanges();
+                msContext.SaveChanges();
             }
 
             // Create a renter
             var renter = new Renter("John", "Doe");
 
-            if (!context.Renters.Any())
+            if (!msContext.Renters.Any())
             {
-                context.Renters.Add(renter);
-                context.SaveChanges();
+                msContext.Renters.Add(renter);
+                msContext.SaveChanges();
             }
 
             // Make it loan a book
             var loan = new Loan(books[0], renter, DateTime.Now.AddDays(-10).AddMonths(-2), DateTime.Now.AddMonths(10));
 
 
-            if (!context.Loans.Any())
+            if (!msContext.Loans.Any())
             {
-                context.Loans.Add(loan);
+                msContext.Loans.Add(loan);
                 books[0].SetLoanStatus(true);
-                context.SaveChanges();
+                msContext.SaveChanges();
             }
 
             // Create a reserver
             var reserver = new Renter("Jane", "Doe");
 
-            if (context.Renters.Count() == 1) 
+            if (msContext.Renters.Count() == 1) 
             {
-                context.Renters.Add(reserver);
-                context.SaveChanges();
+                msContext.Renters.Add(reserver);
+                msContext.SaveChanges();
             }
 
             // Make it reserve a book that is loaned
             var reservation = new Reservation(books[0], reserver);
 
-            if (!context.Reservations.Any())
+            if (!msContext.Reservations.Any())
             {
-                context.Reservations.Add(reservation);
-                context.SaveChanges();
+                msContext.Reservations.Add(reservation);
+                msContext.SaveChanges();
             }
         }
     }

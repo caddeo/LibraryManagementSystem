@@ -3,7 +3,7 @@ using LMSService.Models;
 
 namespace LMSService.Database
 {
-    public class LibraryContext : DbContext
+    public class LibraryMSContext : DbContext
     {
         public DbSet<Book> Books { get; set; }
         public DbSet<Reservation> Reservations { get; set; }

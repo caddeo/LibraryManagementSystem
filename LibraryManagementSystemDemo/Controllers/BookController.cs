@@ -17,10 +17,9 @@ namespace LibraryManagementSystemDemo.Controllers
         public BookController()
         {
             _service = new LibraryServiceClient();
-            
-            //
 
         }
+
         // GET: BookView
         [HttpGet]
         public async Task<ActionResult> Index()
